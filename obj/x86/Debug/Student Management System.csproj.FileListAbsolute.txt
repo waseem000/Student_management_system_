@@ -1,0 +1,5 @@
+c:\users\waseem\documents\visual studio 2010\Projects\Student Management System\Student Management System\bin\Debug\Student Management System.exe.config
+c:\users\waseem\documents\visual studio 2010\Projects\Student Management System\Student Management System\bin\Debug\Student Management System.exe
+c:\users\waseem\documents\visual studio 2010\Projects\Student Management System\Student Management System\bin\Debug\Student Management System.pdb
+c:\users\waseem\documents\visual studio 2010\Projects\Student Management System\Student Management System\obj\x86\Debug\Student Management System.exe
+c:\users\waseem\documents\visual studio 2010\Projects\Student Management System\Student Management System\obj\x86\Debug\Student Management System.pdb
