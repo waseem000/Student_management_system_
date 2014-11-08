@@ -77,6 +77,7 @@ public class DBConnect
         }
         catch (MySqlException ex)
         {
+            Console.WriteLine(ex.Message);
             // MessageBox.Show(ex.Message);
             return false;
         }
@@ -93,12 +94,12 @@ public class DBConnect
         cmd = new MySqlCommand(sql, connection);
        // MySqlDataReader result;
         result = cmd.ExecuteReader();
-        Console.WriteLine(result);
+      //  Console.WriteLine(result);
         return result;
     }
     public void close_data_reader()
     {
         result.Close();//close datareader
-        Console.WriteLine("data reader is closed");
+      //  Console.WriteLine("data reader is closed");
     }
 }
