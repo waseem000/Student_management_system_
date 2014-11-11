@@ -25,7 +25,7 @@ public class DBConnect
         password = "";
         string connectionString;
         connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-        database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+        database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + " ; Convert Zero Datetime=True;";
 
         connection = new MySqlConnection(connectionString);
     }

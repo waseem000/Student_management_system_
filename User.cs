@@ -82,10 +82,10 @@ namespace Back_end
                 return false;
             }
         }
-        public virtual int get_user_id(string email, string user_name, int permission)
+        public virtual int get_user_id( string user_name, string password)
         {
             int id = 0;
-            sql_statment = "select user_id from users where email ='" + email + "' and user_name ='" + user_name + "' and permission_type = '" + permission + "'";
+            sql_statment = "select user_id from users where user_name ='" + user_name + "' and password = '" + password + "'";
             //	System.out.println(sql_statment);
             res = database.execute_query(sql_statment);
             try

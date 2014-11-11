@@ -44,7 +44,7 @@ namespace Back_end
             Console.WriteLine(sql_statment);
             success = database.execute_statment(sql_statment);
 
-            int user_id = user.get_user_id(email, user_name, permission_type);
+            int user_id = user.get_user_id(user_name, password);
             sql_statment = "insert into staff(first_name,last_name,email,permission_type, Users_user_id) values('" + first_name + "','" + last_name + "','" + email + "','" + permission_type + "','" + user_id + "')";
             Console.WriteLine(sql_statment);
             success = database.execute_statment(sql_statment);

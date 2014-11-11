@@ -449,7 +449,10 @@ namespace Back_end
                 // TODO Auto-generated method stub
 
                 int number_of_student = get_number_of_student(major_id) - 1;
-
+                if (number_of_student < 0)
+                {
+                    number_of_student = 0;
+                }
                 sql_statment = "UPDATE  majors SET number_of_students = '" + number_of_student + "' where major_id= '" + major_id + "'";
                 Console.WriteLine(sql_statment);
                 database.execute_statment(sql_statment);
