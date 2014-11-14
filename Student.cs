@@ -33,7 +33,7 @@ namespace Back_end
             private Student_Record record = object_initialization.student_record;//needs implementation
             private Courses course = object_initialization.course;
             private Took_Courses took_courses = object_initialization.took_courses;//needs implementation
-
+            private Student_Account account = object_initialization.student_account;
             public Student ()
             {
                 //do nothing
@@ -64,7 +64,7 @@ namespace Back_end
                 major.add_student_to_major(major_id);
 
                 record.add_student_entry(get_student_id(user_id), gpa, major_credits, finished_credits, major_credits);
-
+                account.add_student_entry(get_student_id(user_id));
                 if (success )
                 {
                     Console.Write(success);
@@ -133,6 +133,7 @@ namespace Back_end
                 sql_statment = "delete from users where user_id = '" + user_id + "'";
                 success = database.execute_statment(sql_statment);
                 record.delete_student_entry(id);
+                account.remove_student_enrty(id);
                 if (success )
                 {
                     Console.Write(success);

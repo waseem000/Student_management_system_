@@ -8,24 +8,32 @@ using Staff = Back_end.Staff;
 using Major = Back_end.Major;
 using Courses = Back_end.Courses;
 using Student = Back_end.Student;
-
+using Student_Record = Back_end.Student_Record;
+using Student_Schedule = Back_end.Student_Schedule;
+using Took_Courses = Back_end.Took_Courses;
+using Student_Account = Back_end.Student_Account;
+using Log_in = Back_end.Log_in;
+using Log_out = Back_end.Log_out;
 namespace Student_Management_System
 {
     class Program
     {
         static void Main (string[] args)
         {
-
-
+            Console.WriteLine(DateTime.Now);
+            object_initialization.set_deadline(DateTime.Parse("2014/11/15 12:00:00 AM"));
             DBConnect db = object_initialization.db;//new DBConnect();
             User user = object_initialization.user; //new User(db);
             Staff staff = object_initialization.staff;//new Staff(db);
             Major major = object_initialization.major;
             Courses course = object_initialization.course;
             Student s = object_initialization.student;
-         
-
-            
+            Student_Record record = object_initialization.student_record;
+            Student_Schedule schedule = object_initialization.student_schedule;
+            Took_Courses tc = object_initialization.took_courses;
+            Student_Account account = object_initialization.student_account;
+            Log_in log_in = object_initialization.log_in;
+            Log_out log_out = object_initialization.log_out;
             db.OpenConnection();
             Console.WriteLine("Connection is open");
 
@@ -281,9 +289,180 @@ namespace Student_Management_System
             //    i = i + 10;
             //}
             //----------------testing Student class End---------------//
-       
+            //----------------testing  Student_record class Start---------------// 
+
+            //record.add_student_entry(6, 3.0, 40, 15, 35);
+            //record.add_student_entry(13, 3.5, 45, 15, 30);
+            //record.update_student_entry(29, 1.0, 5, 10, 40);
+            //record.delete_student_entry(30);
+            //record.get_gpa(29);
+            //record.get_total_credits(29);
+            //record.get_finished_credits(29);
+            //record.get_remaining_credits(29);
+            //record.set_total_credits(13);
+            //record.set_finished_credits(13);
+            //record.set_gpa(13, 4.0);
+            //record.set_remaining_credits(13);
 
 
+
+            //List<string> temp20 = record.get_student_record(6);
+            //for (int i = 0; i < temp20.Count; i++)
+            //{
+            //    Console.WriteLine("student_id =" + temp20[i]);
+            //    Console.WriteLine("gpa =" + temp20[i + 1]);
+            //    Console.WriteLine("total_credits =" + temp20[i + 2]);
+            //    Console.WriteLine("finished_credits =" + temp20[i + 3]);
+            //    Console.WriteLine("remaining_credits =" + temp20[i + 4]);
+
+            //    i = i + 4;
+            //}
+            //----------------testing Student_record class End---------------//
+            //----------------testing  Student_schedule class Start---------------// 
+
+            //  schedule.add_course(30, 4);
+
+            //schedule.get_student_schedule(30);
+            //List<string> temp21 = schedule.get_student_schedule(30);
+            //for (int i = 0; i < temp21.Count; i++)
+            //{
+            //    Console.WriteLine("student_id =" + temp21[i]);
+            //    Console.WriteLine("course_id =" + temp21[i + 1]);
+            //    Console.WriteLine("abbreviation =" + temp21[i + 2]);
+            //    Console.WriteLine("start_date =" + temp21[i + 3]);
+            //    Console.WriteLine("end_date =" + temp21[i + 4]);
+            //    Console.WriteLine("day_time =" + temp21[i + 5]);
+            //    Console.WriteLine("room =" + temp21[i + 6]);
+
+            //    i = i + 6;
+            //}
+
+
+            //List<string> temp22 = schedule.get_student_schedule_table();
+            //for (int i = 0; i < temp22.Count; i++)
+            //{
+            //    Console.WriteLine("student_id =" + temp22[i]);
+            //    Console.WriteLine("course_id =" + temp22[i + 1]);
+            //    Console.WriteLine("abbreviation =" + temp22[i + 2]);
+            //    Console.WriteLine("start_date =" + temp22[i + 3]);
+            //    Console.WriteLine("end_date =" + temp22[i + 4]);
+            //    Console.WriteLine("day_time =" + temp22[i + 5]);
+            //    Console.WriteLine("room =" + temp22[i + 6]);
+
+            //    i = i + 6;
+            //}
+            //schedule.remove_course(6, 5);
+            //----------------testing Student class End---------------//
+            //----------------testing  Took_courses class Start---------------// 
+            // tc.drop_student_from_course(6, 1);
+            //  tc.add_student_to_course(6, course.get_course_id("Software Managment 113"));
+            //tc.add_student_to_course(6, course.get_course_id("Software Managment 333"));
+
+
+            //tc.add_student_to_course(6, course.get_course_id("Software Managment101"));
+            //tc.drop_student_from_course(6, course.get_course_id("Software Managment"));
+            //tc.drop_student_from_course(6, course.get_course_id("Software Managment 113"));
+            //tc.drop_student_from_course(6, course.get_course_id("Software Managment 101"));
+            //tc.drop_student_from_course(6, course.get_course_id("Software Managment 333"));
+            //tc.drop_student_from_course(6, course.get_course_id("Software Managment"));
+
+
+            //tc.get_letter_grade(6, course.get_course_id("Software Managment 113"));
+            //tc.get_semester_took(6, course.get_course_id("Software Managment 113"));
+            //tc.get_status(6, course.get_course_id("Software Managment 113"));
+
+
+            //   List<int> temp11=tc.get_student_courses(6);
+
+            //  for (int k = 0; k < temp11.Count; k++)
+            //  {
+            //      Console.WriteLine(course.get_name(temp11[k]));
+            //  }
+
+
+            //  Console.WriteLine("-----------------------------");
+            //  List<String> temp12=	tc.get_took_courses_table();
+
+            //for (int i = 0; i < temp12.Count; i++)
+            //  {
+            //      Console.WriteLine("student id ="+ temp12[i]);
+            //      Console.WriteLine("course id ="+ temp12[i+1]);
+            //      Console.WriteLine("letter grade ="+ temp12[i+2]);
+            //      Console.WriteLine("status ="+ temp12[i+3]);
+            //      Console.WriteLine("semester took ="+ temp12[i+4]);
+
+            //      Console.WriteLine("-----------------------------");
+            //      i=i+4;
+            //  }	
+
+            //log_in.authenticate_user("ahmad_ahmad", "ahmad");
+          //  log_in.authenticate_user("joe_john", "joe");
+        //    log_in.authenticate_user("ahmad_ahmad", "ahmad");
+        // Console.WriteLine(  log_in.get_log_in_time(30));
+        //  Console.WriteLine(log_in.get_session_id(30));
+
+        //  List<String> temp15 = log_in.logged_in_user(30);
+
+        //  for (int k = 0; k < temp15.Count; k++)
+        //  {
+        //      Console.WriteLine(temp15[k]);
+        //  }
+        //  Console.WriteLine("-----------------------------");
+        //  List<String> temp16 = log_in.logged_in_users();
+
+        //  for (int i = 0; i < temp16.Count; i++)
+        //  {
+        //      Console.WriteLine("session id =" + temp16[i]);
+        //      Console.WriteLine("user id =" + temp16[i + 1]);
+        //      Console.WriteLine("premission type  =" + temp16[i + 2]);
+        //      Console.WriteLine("log_in_time =" + temp16[i + 3]);
+
+        //      Console.WriteLine("-----------------------------");
+        //      i = i + 3;
+        //  }
+
+          //  log_out.log_out_user(6);
+
+         //  account.add_student_entry(6);
+          //  account.remove_student_enrty(6);
+            //account.is_fined(6);
+            //account.is_full_paid(6);
+            //account.get_remaining_fees(6);
+            //account.get_student_tuition(6);
+            //account.get_paid_fees(6);
+
+            //account.set_paid_fees(6, 2500);
+            //account.set_paid_date(6, DateTime.Now);
+
+            //account.get_remaining_fees(6);
+
+
+            //List<String> temp16 = account.get_student_account(6);
+
+            //for (int i = 0; i < temp16.Count; i++)
+            //{
+            //    Console.WriteLine("sstudent id =" + temp16[i]);
+            //    Console.WriteLine("student_tuition  =" + temp16[i + 1]);
+            //    Console.WriteLine("paid_fees   =" + temp16[i + 2]);
+            //    Console.WriteLine("remaining_fees =" + temp16[i + 3]);
+            //    Console.WriteLine("is_full_paid id =" + temp16[i+4]);
+            //    Console.WriteLine("deadline  =" + temp16[i + 5]);
+            //    Console.WriteLine("paid_date   =" + temp16[i + 6]);
+            //    Console.WriteLine("late_payment_fine =" + temp16[i + 7]);
+            //    Console.WriteLine("is_fined   =" + temp16[i + 8]);
+            //    Console.WriteLine("receipt_id =" + temp16[i + 9]);
+
+                
+            //    Console.WriteLine("-----------------------------");
+            //    i = i + 9;
+            //}
+           // s.add_student("jakson", "lan", "male", "J.lan@gmail.com", "SOEN", 40, 0, 0.0, "11/11/2014", "full Time");
+
+          //  tc.add_student_to_course(37, 3);
+         //  tc.add_student_to_course(37, 4);
+           // tc.add_student_to_course(21, 4);
+          // account.set_paid_fees(37, 1500);
+         //  account.set_paid_date(37, DateTime.Now);
             db.CloseConnection();
           Console.WriteLine("Connection is closed");
         }
